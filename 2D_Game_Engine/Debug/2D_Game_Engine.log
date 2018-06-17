@@ -1,1 +1,5 @@
-﻿  2D_Game_Engine.vcxproj -> C:\Users\ANDREW.JORGENSEN\Source\Repos\2D_Game_Engine\Debug\2D_Game_Engine.exe
+﻿  Game.cpp
+  main.cpp
+  Generating Code...
+  LINK : C:\Users\ANDREW.JORGENSEN\source\repos\2D_Game_Engine\Debug\2D_Game_Engine.exe not found or not built by the last incremental link; performing full link
+  2D_Game_Engine.vcxproj -> C:\Users\ANDREW.JORGENSEN\source\repos\2D_Game_Engine\Debug\2D_Game_Engine.exe
