@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\dll">
+      <UniqueIdentifier>{86f8fda4-de31-4fc3-98e5-546bb34e62bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -23,8 +26,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="SDL2_image.dll">
+      <Filter>Resource Files\dll</Filter>
+    </None>
     <None Include="SDL2.dll">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files\dll</Filter>
+    </None>
+    <None Include="libpng16-16.dll">
+      <Filter>Resource Files\dll</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
