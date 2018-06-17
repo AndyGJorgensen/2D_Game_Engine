@@ -57,12 +57,11 @@ void Game::handleEvents()
 void Game::update()
 {
 	cnt++;
-	destR.h = 64;
-	destR.w = 64;
-	destR.x = cnt;
-	destR.y = 50;
 
-
+	destR.h = 64; //player pixel hieght
+	destR.w = 64; //player pixel hieght
+	destR.x = cnt;//player x cord
+	destR.y = 50;//player y cord
 
 	std::cout << cnt << std::endl;
 }
