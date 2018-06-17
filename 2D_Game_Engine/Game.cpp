@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include "TextureManager.h"
 SDL_Texture* playerTex;
 SDL_Rect srcR, destR;
 
@@ -30,9 +30,10 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 		isRunning = true;
 	}
 
+
 	SDL_Surface* tmpSurface = IMG_Load("player.png");
-	playerTex = SDL_CreateTextureFromSurface(renderer, tmpSurface);
-	SDL_FreeSurface(tmpSurface);
+	playerTex = TextureManager::LoadTexture("player.png", renderer);
+
 
 
 
@@ -58,10 +59,10 @@ void Game::update()
 {
 	cnt++;
 
-	destR.h = 64; //player pixel hieght
-	destR.w = 64; //player pixel hieght
+	destR.h = cnt/4; //player pixel hieght
+	destR.w = cnt/4; //player pixel hieght
 	destR.x = cnt;//player x cord
-	destR.y = 50;//player y cord
+	destR.y = cnt/2;//player y cord
 
 	std::cout << cnt << std::endl;
 }
