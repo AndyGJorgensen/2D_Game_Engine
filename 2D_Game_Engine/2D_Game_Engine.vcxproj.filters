@@ -18,6 +18,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="player.png">
+      <Filter>Source Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -26,24 +31,28 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="SDL2_image.dll">
-      <Filter>Resource Files\dll</Filter>
-    </None>
-    <None Include="SDL2.dll">
-      <Filter>Resource Files\dll</Filter>
-    </None>
-    <None Include="libpng16-16.dll">
-      <Filter>Resource Files\dll</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="player.png">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <None Include="libfreetype-6.dll">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="libpng16-16.dll">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="SDL2.dll">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="SDL2_image.dll">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="SDL2_ttf.dll">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="zlib1.dll">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
