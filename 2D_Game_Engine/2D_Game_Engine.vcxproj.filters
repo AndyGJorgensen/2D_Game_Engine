@@ -18,11 +18,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="player.png">
-      <Filter>Source Files</Filter>
-    </Image>
     <Image Include="enemy.png">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="dirt.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="grass.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="water.png">
+      <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -38,6 +47,9 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -49,25 +61,28 @@
     <ClInclude Include="GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="libfreetype-6.dll">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="libpng16-16.dll">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="SDL2.dll">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="SDL2_image.dll">
-      <Filter>Source Files</Filter>
+    <None Include="zlib1.dll">
+      <Filter>Resource Files\dll</Filter>
     </None>
     <None Include="SDL2_ttf.dll">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files\dll</Filter>
     </None>
-    <None Include="zlib1.dll">
-      <Filter>Source Files</Filter>
+    <None Include="SDL2_image.dll">
+      <Filter>Resource Files\dll</Filter>
+    </None>
+    <None Include="SDL2.dll">
+      <Filter>Resource Files\dll</Filter>
+    </None>
+    <None Include="libpng16-16.dll">
+      <Filter>Resource Files\dll</Filter>
+    </None>
+    <None Include="libfreetype-6.dll">
+      <Filter>Resource Files\dll</Filter>
     </None>
   </ItemGroup>
 </Project>
