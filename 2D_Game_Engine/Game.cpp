@@ -9,7 +9,7 @@ Map* map;
 Manager manager;
 
 SDL_Renderer* Game::renderer = nullptr;
-
+SDL_Event Game::event;
 auto& player(manager.addEntity());
 
 Game::Game()
@@ -43,14 +43,14 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 
 	player.addComponent<TransformComponent>();
 	player.addComponent<SpriteComponent>("player.png");
-
+	player.addComponent<KeyboardController>();
 
 
 }
 
 void Game::handleEvents()
 {
-	SDL_Event event;
+
 
 	SDL_PollEvent(&event);
 
@@ -69,11 +69,15 @@ void Game::update()
 
 	manager.refresh();
 	manager.update();
-	player.getComponent<TransformComponent>().position.Add(Vector2D(5, 0));
+	//player.getComponent<TransformComponent>().position.Add(Vector2D(5, 0)); one way of moving player best to use "player.addComponent<KeyboardController>();"
 	if (player.getComponent<TransformComponent>().position.x > 200)
 	{
 		player.getComponent<SpriteComponent>().setTex("enemy.png");
-
+	}
+	else
+	{
+		player.getComponent<SpriteComponent>().setTex("player.png");
+	
 	}
 
 }
