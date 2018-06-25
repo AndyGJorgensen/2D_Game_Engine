@@ -36,6 +36,18 @@
     <Image Include="water.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="player_idle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="madoka_running_by_konbe-d6ic876.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="player_idle1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="player_anim.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -101,6 +113,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TileComponent.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
   </ItemGroup>

@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Components.h" />
@@ -168,7 +169,11 @@
     <Image Include="dirt.png" />
     <Image Include="enemy.png" />
     <Image Include="grass.png" />
+    <Image Include="madoka_running_by_konbe-d6ic876.gif" />
     <Image Include="player.png" />
+    <Image Include="player_anim.png" />
+    <Image Include="player_idle.png" />
+    <Image Include="player_idle1.png" />
     <Image Include="water.png" />
   </ItemGroup>
   <ItemGroup>
