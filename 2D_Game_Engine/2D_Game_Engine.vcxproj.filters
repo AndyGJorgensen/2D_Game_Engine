@@ -48,6 +48,12 @@
     <Image Include="player_anim.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="terrain_ss.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="test.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -139,6 +145,9 @@
       <Filter>Resource Files\dll</Filter>
     </None>
     <None Include="p16x16.map">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="map.map">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

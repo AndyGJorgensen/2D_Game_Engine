@@ -16,6 +16,7 @@ std::vector<ColliderComponent*> Game::colliders;
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
 
+const char* mapfile = "terrain_ss.png";
 
 enum groupLabels : std::size_t
 {
@@ -54,18 +55,14 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 
 	map = new Map();
 
-	Map::LoadMap("p16x16.map", 16, 16);
+	Map::LoadMap("map.map", 25, 20);
 
-	player.addComponent<TransformComponent>(2);
-	player.addComponent<SpriteComponent>("player_anim.png", true);
+	player.addComponent<TransformComponent>(4);
+	player.addComponent<SpriteComponent>("test.png", true);
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
 
-	wall.addComponent<TransformComponent>(300.0f, 300.0f, 300, 20, 1);
-	wall.addComponent<SpriteComponent>("dirt.png");
-	wall.addComponent<ColliderComponent>("wall");
-	wall.addGroup(groupMap);
 }
 void Game::handleEvents()
 {
@@ -95,23 +92,6 @@ void Game::update()
 		Collision::AABB(player.getComponent<ColliderComponent>(), *cc);
 	}
 
-
-	if (player.getComponent<TransformComponent>().position.x > 200)
-	{
-		//player.getComponent<SpriteComponent>().setTex("enemy.png");
-	}
-	else
-	{
-		//player.getComponent<SpriteComponent>().setTex("player.png");
-	}
-
-
-	if (Collision::AABB(player.getComponent<ColliderComponent>().collider, wall.getComponent<ColliderComponent>().collider))
-	{
-	//	player.getComponent<TransformComponent>().scale = 1;
-	//	player.getComponent<TransformComponent>().velocity * -1;
-	//	std::cout << "wallhit" << std::endl;
-	}
 }
 auto& tiles(manager.getGroup(groupMap));
 auto& players(manager.getGroup(groupPlayers));
@@ -144,9 +124,9 @@ void Game::clean()
 	SDL_Quit();
 }
 
-void Game::AddTile(int id, int x, int y)
+void Game::AddTile(int srcX, int srcY, int xpos, int ypos)
 {
 	auto& tile(manager.addEntity());
-	tile.addComponent<TileComponent>(x, y, 32, 32, id);
+	tile.addComponent<TileComponent>(srcX, srcY, xpos, ypos, mapfile);
 	tile.addGroup(groupMap);
 }
