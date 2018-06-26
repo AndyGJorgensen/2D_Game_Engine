@@ -8,10 +8,14 @@
 Map* map;
 Manager manager;
 
+SDL_Rect Game::camera = { 0,0,800,640 };
+
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
 
 std::vector<ColliderComponent*> Game::colliders;
+
+bool Game::isRunning = false;
 
 auto& player(manager.addEntity());
 auto& wall(manager.addEntity());
@@ -25,6 +29,10 @@ enum groupLabels : std::size_t
 	groupEnemies,
 	groupColliders
 };
+
+auto& tiles(manager.getGroup(groupMap));
+auto& players(manager.getGroup(groupPlayers));
+auto& enemies(manager.getGroup(groupEnemies));
 
 Game::Game()
 {}
@@ -85,17 +93,25 @@ void Game::update()
 
 	manager.refresh();
 	manager.update();
-	//player.getComponent<TransformComponent>().position.Add(Vector2D(5, 0)); one way of moving player best to use "player.addComponent<KeyboardController>();"
 
-	for (auto cc : colliders)
-	{
-		Collision::AABB(player.getComponent<ColliderComponent>(), *cc);
-	}
+	//player.getComponent<TransformComponent>().position.Add(Vector2D(5, 0)); //one way of moving player best to use "player.addComponent<KeyboardController>();"
+
+	//move camera around
+	camera.x = player.getComponent<TransformComponent>().position.x - 400;
+	camera.y = player.getComponent<TransformComponent>().position.y - 320;
+
+	//camera limits
+	if (camera.x < 0)
+		camera.x = 0;
+	if (camera.y < 0)
+		camera.y = 0;
+	if (camera.x > camera.w)
+		camera.x = camera.w;
+	if (camera.y > camera.h)
+		camera.y = camera.h;
 
 }
-auto& tiles(manager.getGroup(groupMap));
-auto& players(manager.getGroup(groupPlayers));
-auto& enemies(manager.getGroup(groupEnemies));
+
 
 void Game::render()
 {

@@ -24,7 +24,8 @@ public:
 
 	TransformComponent(int sc)
 	{
-		position.Zero();
+		position.x = 400;
+		position.y = 320;
 		scale = sc;
 	}
 
@@ -58,7 +59,7 @@ public:
 
 	void update() override
 	{
-		position.x += velocity.x * speed;
+		position.x += velocity.x * speed; //move player arrounbd
 		position.y += velocity.y * speed;
 
 	}
